@@ -94,8 +94,8 @@
             width: 120px;
             padding: 10px;
             font-size: 14px;
-            background-color: #fff; /* White button */
-            color: #000; /* Black text */
+            background-color: #000; /* Black button */
+            color: #fff; /* White text */
             border: 2px solid #fff;
             border-radius: 5px;
             cursor: pointer;
@@ -103,8 +103,8 @@
         }
 
         button:hover {
-            background-color: #000; /* Black background on hover */
-            color: #fff; /* White text on hover */
+            background-color: #fff; /* White background on hover */
+            color: #000; /* Black text on hover */
         }
 
         .footer {
@@ -122,9 +122,9 @@
                 width: 90%; /* Wider hr on mobile */
             }
             button {
-                width: 100px; /* Smaller buttons on mobile */
-                padding: 8px;
-                font-size: 12px;
+                width: 110px; /* Adjusted width for mobile */
+                padding: 10px; /* Keeping padding for consistency */
+                font-size: 14px;
             }
         }
 
@@ -133,8 +133,10 @@
                 flex-direction: column; /* Stack buttons vertically on small screens */
             }
             button {
-                width: 80%; /* Make buttons take most of the width */
+                width: 85%; /* Increase button width for mobile */
                 max-width: 300px; /* Ensure it doesn't stretch too much */
+                padding: 12px; /* Increased padding for larger buttons */
+                font-size: 14px; /* Adjust font size for better visibility */
             }
         }
     </style>
@@ -144,7 +146,7 @@
     <div class="stars"></div>
 
     <div class="container">
-        <h1>NeilVergara12 - Portfolio</h1>
+        <h1>Welcome to Neil's Portfolio</h1>
         <hr>
         <div class="button-container">
             <button onclick="location.href='#'">Project 1</button>
