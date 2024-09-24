@@ -126,8 +126,7 @@
                 width: 50%; /* Wider hr on mobile */
             }
             .button-container {
-                flex-direction: row; /* Keep buttons in row for mobile */
-                justify-content: space-between; /* Space between buttons */
+                justify-content: center;
             }
             button {
                 width: calc(50% - 10px); /* Set width to 50% for two columns */
@@ -138,12 +137,13 @@
 
         @media screen and (max-width: 480px) {
             .button-container {
-                flex-direction: row; /* Maintain two columns */
+                justify-content: center; /* Center buttons */
             }
             button {
-                width: calc(50% - 10px); /* Adjust button width for mobile */
+                width: calc(45%); /* Set width for two-column layout */
                 padding: 12px; /* Increased padding for larger buttons */
                 font-size: 1em; /* Adjust font size for better visibility */
+                margin: 10px 5px; /* Small margin for better spacing */
             }
         }
     </style>
