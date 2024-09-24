@@ -91,20 +91,22 @@
         }
 
         button {
-            width: 130px;
-            padding: 10px;
-            font-size: 14px;
-            background-color: #000; /* Black button */
+            background: transparent; /* Transparent background */
+            border: 2px solid #fff; /* White outline */
+            border-radius: 8px; /* Rounded corners */
             color: #fff; /* White text */
-            border: 2px solid #fff;
-            border-radius: 5px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-family: 'Roboto', sans-serif;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            margin: 10px; /* Space between buttons */
             cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
         }
 
         button:hover {
-            background-color: #fff; /* White background on hover */
+            background: #fff; /* White background on hover */
             color: #000; /* Black text on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
         }
 
         .footer {
@@ -122,9 +124,9 @@
                 width: 90%; /* Wider hr on mobile */
             }
             button {
-                width: 115px; /* Adjusted width for mobile */
+                width: 120px; /* Adjusted width for mobile */
                 padding: 10px; /* Keeping padding for consistency */
-                font-size: 14px;
+                font-size: 1em; /* Adjust font size for mobile */
             }
         }
 
@@ -133,10 +135,10 @@
                 flex-direction: column; /* Stack buttons vertically on small screens */
             }
             button {
-                width: 85%; /* Increase button width for mobile */
+                width: 90%; /* Increase button width for mobile */
                 max-width: 300px; /* Ensure it doesn't stretch too much */
                 padding: 12px; /* Increased padding for larger buttons */
-                font-size: 14px; /* Adjust font size for better visibility */
+                font-size: 1em; /* Adjust font size for better visibility */
             }
         }
     </style>
