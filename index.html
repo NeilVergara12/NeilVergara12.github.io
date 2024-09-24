@@ -95,12 +95,14 @@
             border: 2px solid #fff; /* White outline */
             border-radius: 8px; /* Rounded corners */
             color: #fff; /* White text */
-            padding: 15px 30px;
+            padding: 15px 20px; /* Adjusted padding for better layout */
             font-size: 1.2em;
             font-family: 'Roboto', sans-serif;
             transition: background 0.3s, color 0.3s, transform 0.3s;
             margin: 10px; /* Space between buttons */
             cursor: pointer;
+            white-space: nowrap; /* Prevent text wrapping */
+            max-width: 120px; /* Set a maximum width for buttons */
         }
 
         button:hover {
@@ -123,8 +125,12 @@
             hr {
                 width: 90%; /* Wider hr on mobile */
             }
+            .button-container {
+                flex-direction: row; /* Keep buttons in row for mobile */
+                justify-content: space-between; /* Space between buttons */
+            }
             button {
-                width: 120px; /* Adjusted width for mobile */
+                width: calc(50% - 10px); /* Set width to 50% for two columns */
                 padding: 10px; /* Keeping padding for consistency */
                 font-size: 1em; /* Adjust font size for mobile */
             }
@@ -132,11 +138,10 @@
 
         @media screen and (max-width: 480px) {
             .button-container {
-                flex-direction: column; /* Stack buttons vertically on small screens */
+                flex-direction: row; /* Maintain two columns */
             }
             button {
-                width: 90%; /* Increase button width for mobile */
-                max-width: 300px; /* Ensure it doesn't stretch too much */
+                width: calc(50% - 10px); /* Adjust button width for mobile */
                 padding: 12px; /* Increased padding for larger buttons */
                 font-size: 1em; /* Adjust font size for better visibility */
             }
