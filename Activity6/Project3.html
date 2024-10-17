@@ -9,16 +9,6 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
   <style>
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: none;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
-    }
-
     .card-img-top {
       height: 200px;
       object-fit: cover;
@@ -162,6 +152,32 @@
     function removeShadow(id) {
       document.getElementById(id).classList.remove("shadow");
     }
+
+    // Apply initial styles to the card elements
+  function applyCardStyles() {
+    const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    // Apply initial styles for the card
+    card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+    card.style.border = 'none';
+
+    // Add hover effect using mouse events
+    card.addEventListener('mouseover', () => {
+      card.style.transform = 'scale(1.05)';
+      card.style.boxShadow = '0px 0px 0px rgba(0, 0, 0, 0.2)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'scale(1)';
+      card.style.boxShadow = 'none';
+    });
+  });
+}
+
+// Call the function to apply the styles
+applyCardStyles();
+
 
     var display = "none";
 
