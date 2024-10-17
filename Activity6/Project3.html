@@ -57,6 +57,19 @@
       margin-bottom: 30px;
     }
 
+    .info-footer {
+      background-color: #004080;
+      color: white;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: Center;
+      text-align: Center;
+      font-family: Abhaya libre;
+      border-radius: 20px;
+      margin-bottom: 30px;
+    }
+
     .expand-btn {
       background-color: #a9b1b3;
       border: none;
@@ -69,20 +82,25 @@
     .expand-btn:hover {
       background-color: #262727;
     }
+
+    #footer {
+      background-color: #004080;
+      color: white;
+    }
   </style>
 </head>
 
 <body id="body" data-bs-theme="light">
   <nav class="navbar navbar-expand-lg shadow">
     <div class="container-fluid">
-      <h1 class="navbar-brand" style="font-family: Abhaya libre;"> The Gallery</h1>
-      <button class="btn btn-outline-secondary" style="font-family: Abhaya libre;" onclick="changeMode()" type="submit">Mode</button>
+      <h1 class="navbar-brand" style="font-family: Abhaya libre; font-size: 1.7rem;">The Gallery</h1>
+      <button class="btn btn-outline-secondary" style="font-family: Abhaya libre; font-size: 1.2rem;" onclick="changeMode()" type="submit">Mode</button>
     </div>
   </nav>
 
   <div class="container mt-5">
     <div class="row">
-      <div class="col">
+      <div class="col card-title">
         <h1 class="display-3 text-center" style="font-family: Abhaya libre;">The Gallery</h1>
       </div>
     </div>
@@ -101,16 +119,14 @@
         <h1 class="display-3 text-center" style="font-family: Abhaya libre;">Gallery</h1>
       </div>
     </div>
-
-    <div class="row" id="cardContainer">
-    </div>
+    <div class="row" id="cardContainer"></div>
 
     <div class="row mt-5">
       <div class="col text-center">
         <h1 class="display-3 text-center" style="font-size: 45px; font-family: Abhaya Libre;">
           Small information about all of the scenery or places around the world.
         </h1>
-        <button type="button" style="font-family: Abhaya libre;" onclick="expandContent()" class="expand-btn" id="btnExpand">Expand</button>
+        <button type="button" style="font-family: Abhaya libre; margin-bottom: 20px;" onclick="expandContent()" class="expand-btn" id="btnExpand">Expand</button>
       </div>
     </div>
 
@@ -187,6 +203,11 @@
       bodyElement.setAttribute("data-bs-theme", colorMode);
     }
   </script>
+
+<footer id="footer" style="background-color: #004080; color: white; text-align: center; padding: 10px; position: relative; bottom: 0; width: 100%;">
+  <h6>© 2024 Gallery | Explore the beauty of the world</h6>
+</footer>
+
 </body>
 
 </html>
