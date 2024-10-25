@@ -1,0 +1,165 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dragonball Gallery | Search</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('Image/Search1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Keeps the background fixed during scroll */
+      min-height: 100vh;
+      color: white;
+    }
+
+    .card {
+      text-align: center;
+      padding: 15px;
+      height: 100%; /* Adjust height to fit dynamically */
+      background-color: orange;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center contents vertically */
+      align-items: center; /* Center contents horizontally */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a slight shadow */
+      border-radius: 10px;
+      transition: transform 0.3s; /* Smooth transition for hover effect */
+    }
+
+    .card:hover {
+      transform: scale(1.05); /* Pop out effect on hover */
+    }
+
+    .imgcontainer {
+      background-color: rgb(254, 205, 112);
+      border-radius: 15px;
+      overflow: hidden;
+      max-height: 300px; /* Adjust height for better fit on screen */
+      width: 100%;
+    }
+
+    .imgcontainer img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .charactername {
+      font-weight: bold;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .error-message {
+      color: red;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .small-button {
+      width: 100%;
+      max-width: 150px;
+    }
+  </style>  
+</head>
+
+<body id="body">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dragonball Gallery</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto"> <!-- Added ms-auto for right alignment -->
+          <li class="nav-item">
+            <a class="nav-link" href="project4.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="list.html">List</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row mt-5 justify-content-center"> <!-- Center the search bar -->
+      <div class="col-12 col-md-4"> <!-- Reduce the width of the search bar -->
+        <input class="form-control mb-2" type="text" placeholder="Dragonball Characters Name" id="searchTerm">
+        <!-- Add margin-bottom for spacing -->
+      </div>
+      <div class="col-12 col-md-2"> <!-- Keep wider column for button -->
+        <button class="btn btn-primary small-button w-100" type="button" onclick="searchCharacter()">Search</button>
+        <!-- Make button full width of column -->
+      </div>
+    </div>
+    <div class="row" id="cardContainer"></div>
+    <div id="errorContainer" class="error-message"></div> <!-- Container for error messages -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Include Bootstrap JS -->
+  <script>
+    const loadCharacter = async (searchTerm) => {
+      const cardContainer = document.getElementById("cardContainer");
+      const errorContainer = document.getElementById("errorContainer");
+      cardContainer.innerHTML = ""; // Clear previous results
+      errorContainer.innerHTML = ""; // Clear previous error messages
+
+      try {
+        const response = await fetch(`https://dragonball-api.com/api/characters?name=${searchTerm}`);
+
+        // If response is not ok, handle the error
+        if (!response.ok) throw new Error("Character not found");
+
+        const characters = await response.json();
+
+        // Check if character data exists and is valid
+        if (characters && characters.length > 0) {
+          characters.forEach((character) => {
+            const image = character.image ? character.image : 'https://via.placeholder.com/150'; // Fallback image
+            cardContainer.innerHTML += `
+              <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <div class="imgcontainer">
+                    <img src="${image}" alt="${character.name}" onclick="redirectToView(${character.id})"> <!-- Redirect on click -->
+                  </div>
+                  <div class="card-body">
+                    <h5 class="charactername">${character.name}</h5>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+        } else {
+          errorContainer.innerHTML = "Character not found."; // Display error in the UI
+        }
+      } catch (error) {
+        errorContainer.innerHTML = error.message; // Display error in the UI
+      }
+    };
+
+    function redirectToView(characterId) {
+      window.location.href = `view.html?characterId=${characterId}`; // Redirect to view.html with characterId
+    }
+
+    function searchCharacter() {
+      const searchTerm = document.getElementById("searchTerm").value.trim();
+      if (searchTerm) {
+        loadCharacter(searchTerm); // Call loadCharacter with the search term
+      } else {
+        document.getElementById("errorContainer").innerHTML = "Please enter a character name."; // Display message in the UI
+      }
+    }
+  </script>
+</body>
+
+</html>
