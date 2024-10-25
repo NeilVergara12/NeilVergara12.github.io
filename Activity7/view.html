@@ -90,7 +90,9 @@
       <div class="col">
         <div class="card p-3 rounded-5">
           <div><b>Gender: </b><span id="gender"></span></div>
-          <div><b>Ki: </b><span id="ki"></span></div>
+          <div><b>Base KI: </b><span id="ki"></span></div>
+          <div><b>Total KI: </b><span id="maxKi"></span></div>
+          <div><b>Affiliation: </b><span id="affiliation"></span></div>
         </div>
       </div>
     </div>
@@ -100,23 +102,29 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>
 
-  <script>
-    var title = document.getElementById("title");
-    var img = document.getElementById("img");
-    var gender = document.getElementById("gender");
-    var ki = document.getElementById("ki");
-    var raceType = document.getElementById("raceType");
+<script>
+  var title = document.getElementById("title");
+  var img = document.getElementById("img");
+  var gender = document.getElementById("gender");
+  var ki = document.getElementById("ki");
+  var maxKi = document.getElementById("maxKi");
+  var affiliation = document.getElementById("affiliation");
+  var raceType = document.getElementById("raceType");
 
-    const loadCharacter = async (characterId) => {
-      const response = await fetch(`https://dragonball-api.com/api/characters/${characterId}`);
-      const character = await response.json();
+  const loadCharacter = async (characterId) => {
+    const response = await fetch(`https://dragonball-api.com/api/characters/${characterId}`);
+    const character = await response.json();
 
-      title.innerHTML = "#" + character.id + " " + character.name;
-      img.src = character.image; // Use the correct image property
-      gender.innerHTML = character.gender;
-      ki.innerHTML = character.ki;
-      raceType.innerHTML = character.race; // Assuming race is available
-    }
+    console.log(character);
+
+    title.innerHTML = "#" + character.id + " " + character.name;
+    img.src = character.image;
+    gender.innerHTML = character.gender;
+    ki.innerHTML = character.ki;
+    maxKi.innerHTML = character.maxKi;
+    affiliation.innerHTML = character.affiliation;
+    raceType.innerHTML = character.race;
+  }
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
