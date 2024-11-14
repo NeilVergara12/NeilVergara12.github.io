@@ -17,6 +17,7 @@
       background-repeat: no-repeat; 
       height: 100vh; 
       color: white; 
+      margin: 0;
     }
 
     .navbar {
@@ -27,6 +28,15 @@
 
     .container {
       margin-top: 80px; 
+    }
+
+    /* Position the iframe at the bottom of the page */
+    iframe {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-radius: 12px;
     }
   </style>
 </head>
@@ -50,6 +60,12 @@
       </div>
     </div>
   </nav>
+
+
+  <iframe src="https://open.spotify.com/embed/playlist/3OuA38S9Gb4bZvIPxG3SVD?utm_source=generator&theme=0" 
+  width="100%" height="152" frameBorder="0" allowfullscreen="" 
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+  </iframe>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
