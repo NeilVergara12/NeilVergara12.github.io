@@ -1,0 +1,46 @@
+/*PUT YOUR CUSTOM STYLE HERE*/
+/*!This style is important, do not override!*/
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    position: relative;
+    z-index: 100;
+    margin-top: 50px;
+}
+
+.main-content {
+    padding-bottom: 50px;
+}
+
+.keyart {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .keyart {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .keyart {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 768px) {
+    iframe {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    iframe {
+        height: 300px;
+    }
+}
