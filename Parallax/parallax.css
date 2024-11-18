@@ -1,75 +1,96 @@
 /* PARALLAX.CSS */
-/*CSS created by Christopher Jay De Claro*/
-/*github.com/cjdeclaro*/
 
-/*Key Art default settings*/
-
+/* Key Art default settings */
 .keyart,
 .keyart_layer {
-	height: 1000px;
+    height: 100vh;
 }
 
 .keyart {
-	position: relative;
-	z-index: 10;
+    position: relative;
+    z-index: 10;
 }
 
 .keyart_layer {
-	background-position: bottom center;
-	background-size: auto 1038px;
-	background-repeat: repeat-x;
-	width: 100%;
-	position: absolute;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
 }
 
+
 .keyart_layer.parallax {
-	position: fixed;
+    position: fixed;
+    top: 0;
+    background-size: cover;
+}
+
+
+@media (max-width: 1024px) {
+    .keyart {
+        height: 60vh;
+    }
+
+    .keyart_layer.parallax {
+        background-size: calc(199%);
+    }
+}
+
+@media (max-width: 768px) {
+    .keyart {
+        height: 50vh;
+    }
+
+    .keyart_layer.parallax {
+        background-size: calc(199%);
+    }
+}
+
+@media (max-width: 576px) {
+    .keyart {
+        height: 40vh;
+    }
+
+    .keyart_layer.parallax {
+        background-size: calc(199%);
+    }
 }
 
 .main-content {
-	width: 100%;
-	position: absolute;
-	z-index: 200;
+    width: 100%;
+    position: absolute;
+    z-index: 200;
 }
 
-/*ADD OR REMOVE LAYERS AS NEEDED*/
-
 #keyart-0 {
-	background-image: url(img/parallax0.png);
+    background-image: url(img/parallax0.png);
 }
 
 #keyart-1 {
-	background-image: url(img/parallax1.png);
+    background-image: url(img/parallax1.png);
 }
 
 #keyart-2 {
-	background-image: url(img/parallax2.png);
+    background-image: url(img/parallax2.png);
 }
 
 #keyart-3 {
-	background-image: url(img/parallax3.png);
+    background-image: url(img/parallax3.png);
 }
 
 #keyart-4 {
-	background-image: url(img/parallax4.png);
+    background-image: url(img/parallax4.png);
 }
 
 #keyart-5 {
-	background-image: url(img/parallax5.png);
+    background-image: url(img/parallax5.png);
 }
 
 #keyart-6 {
-	background-image: url(img/parallax6.png);
+    background-image: url(img/parallax6.png);
 }
 
 #keyart-7 {
-	background-image: url(img/parallax7.png);
-}
-
-#keyart-8 {
-	background-image: url(img/parallax8.png);
-}
-
-#keyart-scrim {
-	opacity: 0;
+    background-image: url(img/parallax7.png);
 }

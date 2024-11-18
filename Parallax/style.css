@@ -1,9 +1,9 @@
-/*PUT YOUR CUSTOM STYLE HERE*/
-/*!This style is important, do not override!*/
+/* PUT YOUR CUSTOM STYLE HERE */
 * {
     margin: 0;
     padding: 0;
 }
+
 .container {
     position: relative;
     z-index: 100;
@@ -21,13 +21,20 @@
     z-index: 1;
 }
 
+
+@media (max-width: 1024px) { 
+    .keyart {
+        height: 60vh;
+    }
+}
+
 @media (max-width: 768px) {
     .keyart {
         height: 50vh;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 576px) { 
     .keyart {
         height: 40vh;
     }
@@ -44,3 +51,40 @@
         height: 300px;
     }
 }
+
+@media (max-width: 768px) {
+    .card {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .card .h3 {
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .card .h3 {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-top: -30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin-top: -50px;
+    }
+}
+
