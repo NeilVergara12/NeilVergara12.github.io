@@ -1,0 +1,36 @@
+body {
+    background-color: #000;
+  }
+
+  .card {
+    background-color: #111 !important;
+    color: white;
+    border-radius: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), transparent);
+    z-index: 0;
+  }
+
+  .card>* {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bg-white h1 {
+    color: black !important;
+  }
+  
