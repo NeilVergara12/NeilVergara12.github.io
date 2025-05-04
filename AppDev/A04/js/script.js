@@ -221,7 +221,8 @@ var products = [
         maincontainer.innerHTML += `
       <div onclick="addToReceipt('${content.price}','${content.code}')" class="card mx-1 my-2 custom-button content p-3 text-center">
         <img src="${content.image}" class="product-img mb-2">
-        <small>${content.name}</small>
+        <small>${content.name}</small><br>
+        <small class="price-text">₱${content.price}</small>
       </div>
     `;
       }
