@@ -144,7 +144,7 @@ var products = [
           "name": "Premium Headlight Lens for Honda Jazz/Fit GE pre MMC (2009-11)",
           "code": "Headlight Lens Honda Jazz/Fit GE (2009-11)",
           "price": 2900,
-          "image": "img/Jazz Lens.webp"
+          "image": "img/Jazz lens.webp"
         },
         {
           "isAvailable": true,
