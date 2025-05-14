@@ -194,38 +194,28 @@ var products = [
 
   function loadCategories() {
     var categoriesContainer = document.getElementById("categories");
-    products.forEach((product, index) => {
+
+    categories.forEach((category) => {
       categoriesContainer.innerHTML += `
-        <div onclick="loadProducts('${index}')" class="card mx-1 custom-button p-3 text-center">
-          <small>${product.category}</small>
+        <div onclick="getAllProducts('` + category.categoryID + `')" class="card mx-1 custom-button p-3 text-center">
+          <small>` + category.name + `</small>
         </div>
       `;
     });
   }
 
-  function loadProducts(categoryIndex) {
+  function loadProducts(categoryID) {
     var maincontainer = document.getElementById("maincontainer");
     maincontainer.innerHTML = "";
 
-    products[categoryIndex].contents.forEach(content => {
-      if (content.sizes) {
-        content.sizes.forEach(size => {
-          maincontainer.innerHTML += `
-        <div onclick="addToReceipt('${size.price}','${content.code + size.code}')" class="card mx-1 my-2 custom-button content p-3 text-center">
-          <img src="${content.image}" alt="${content.name}" class="product-img mb-2">
-          <small>${content.name} ${size.code}</small>
-        </div>
-      `;
-        });
-      } else {
-        maincontainer.innerHTML += `
-      <div onclick="addToReceipt('${content.price}','${content.code}')" class="card mx-1 my-2 custom-button content p-3 text-center">
-        <img src="${content.image}" class="product-img mb-2">
-        <small>${content.name}</small><br>
-        <small class="price-text">₱${content.price}</small>
-      </div>
-    `;
-      }
+    products.forEach(product => {
+      maincontainer.innerHTML += `
+    <div onclick="addToReceipt('` + product.price + `','` + product.code + `')" class="card mx-1 my-2 custom-button content p-3 text-center">
+      <img src="` + product.image + `" alt="` + product.name + `" class="product-img mb-2">
+      <small>` + product.name + `</small><br>
+      <small class="price-text">₱` + product.price + `</small>
+    </div>
+  `;
     });
   }
 
@@ -233,11 +223,14 @@ var products = [
   function addToReceipt(price, code) {
     var receiptContainer = document.getElementById("receipt");
     total = parseFloat(total) + parseFloat(price);
-    document.getElementById("totalValue").innerText = total;
+
+    totalValueElement = document.getElementById("totalValue");
+    totalValueElement.innerHTML = total;
+
     receiptContainer.innerHTML += `
       <div class="d-flex flex-row justify-content-between">
-        <div><small>${code}</small></div>
-        <div><small>${price}</small></div>
+        <div><small>` + code + `</small></div>
+        <div><small>` + price + `</small></div>
       </div>
     `;
   }
