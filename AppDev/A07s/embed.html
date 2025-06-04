@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew & Bloom | Coffee Recipe Book</title>
+  <link rel="icon" href="image/icon.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: url('image/bg1.svg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    h2,
+    h3 {
+      color: #f0e6d2;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      background: none;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('image/bg1.svg') no-repeat center center fixed;
+      background-size: cover;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    .container {
+      padding-top: 20px;
+    }
+
+    .navbar-toggler {
+      border-color: white;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .cardText {
+      font-size: 24px;
+      color: #F9E9CE;
+      font-weight: bold;
+      padding: 5%;
+      text-align: center;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 2px solid #F9E9CE;
+      border-radius: 10px;
+    }
+
+    .card img {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      color: #F9E9CE;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-3">
+    <h2 class="mb-4 text-center">Coffee Recipe Book</h2>
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow">
+          <img src="image/Spanishlatte.png" class="card-img-top" alt="Spanish Latte">
+          <div class="card-body">
+            <h5 class="card-title">Spanish Latte</h5>
+            <p>A creamy mix of espresso and sweetened condensed milk topped with steamed milk.</p>
+            <ul>
+              <li>1 shot of espresso</li>
+              <li>1/4 cup sweetened condensed milk</li>
+              <li>3/4 cup steamed milk</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow">
+          <img src="image/americano.png" class="card-img-top" alt="Americano">
+          <div class="card-body">
+            <h5 class="card-title">Americano</h5>
+            <p>Espresso diluted in hot water for a light, rich taste.</p>
+            <ul>
+              <li>1–2 shots of espresso</li>
+              <li>3/4 cup hot water</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow">
+          <img src="image/mocha.png" class="card-img-top" alt="Mocha">
+          <div class="card-body">
+            <h5 class="card-title">Mocha</h5>
+            <p>Espresso, steamed milk, and chocolate syrup topped with whipped cream.</p>
+            <ul>
+              <li>1 shot of espresso</li>
+              <li>1 tbsp chocolate syrup</li>
+              <li>3/4 cup steamed milk</li>
+              <li>Whipped cream (optional)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow">
+          <img src="image/cappuccino.png" class="card-img-top" alt="Cappuccino">
+          <div class="card-body">
+            <h5 class="card-title">Cappuccino</h5>
+            <p>A balanced mix of espresso, steamed milk, and foamed milk.</p>
+            <ul>
+              <li>1 shot of espresso</li>
+              <li>1/3 cup steamed milk</li>
+              <li>1/3 cup milk foam</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow">
+          <img src="image/latte.png" class="card-img-top" alt="Latte">
+          <div class="card-body">
+            <h5 class="card-title">Latte</h5>
+            <p>A creamy drink with more milk than a cappuccino and a little foam.</p>
+            <ul>
+              <li>1 shot of espresso</li>
+              <li>2/3 cup steamed milk</li>
+              <li>Light layer of milk foam</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow">
+          <img src="image/flatwhite.png" class="card-img-top" alt="Flat White">
+          <div class="card-body">
+            <h5 class="card-title">Flat White</h5>
+            <p>Similar to a latte but with a higher ratio of coffee to milk and a velvety microfoam.</p>
+            <ul>
+              <li>1–2 shots of espresso</li>
+              <li>1/2 cup steamed milk</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow">
+          <img src="image/macchiato.png" class="card-img-top" alt="Macchiato">
+          <div class="card-body">
+            <h5 class="card-title">Macchiato</h5>
+            <p>A shot of espresso with just a dollop of steamed milk or foam.</p>
+            <ul>
+              <li>1 shot of espresso</li>
+              <li>1 tbsp steamed milk or foam</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow">
+          <img src="image/coldbrew.png" class="card-img-top" alt="Cold Brew">
+          <div class="card-body">
+            <h5 class="card-title">Cold Brew</h5>
+            <p>Coffee steeped in cold water for an extended time, served chilled.</p>
+            <ul>
+              <li>1 cup coarsely ground coffee</li>
+              <li>4 cups cold water</li>
+              <li>Steep for 12–24 hours</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow">
+          <img src="image/icedcoffee.png" class="card-img-top" alt="Iced Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Iced Coffee</h5>
+            <p>Regular brewed coffee chilled and served over ice.</p>
+            <ul>
+              <li>1 cup brewed coffee</li>
+              <li>Ice cubes</li>
+              <li>Milk or sweetener (optional)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
